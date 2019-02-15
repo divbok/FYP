@@ -2,79 +2,35 @@ Network communication : full Internet access (D),8182.0,15891.0,8429.39570291777
 Network communication : view network state (S),6047.0,12036.0,6384.507374005305,-0.027149352355374377
 Storage : modify/delete USB storage contents modify/delete SD card contents (D),4668.0,8210.0,4355.002122015915,0.03468888444793528
 Phone calls : read phone state and identity (D),3917.0,7617.0,4040.4447214854113,-0.015513110779407074
-Hardware controls : control vibrator (S),2840.0,4759.0,2524.415968169761,0.05882915003288053
 Your location : coarse (network-based) location (D),2377.0,4267.0,2263.4341114058357,0.02447311735663437
-Your location : fine (GPS) location (D),3112.0,4075.0,2161.5875331564985,0.1802212366568292
-System tools : prevent device from sleeping (D),2659.0,4009.0,2126.577771883289,0.11125557947148029
-Network communication : view Wi-Fi state (S),1630.0,2607.0,1382.8855702917772,0.08201918856290698
 System tools : automatically start at boot (S),1216.0,2277.0,1207.8367639257294,0.0033678984475213228
 Your personal information : read contact data (D),1059.0,1819.0,964.8902387267905,0.046499439284026126
 Hardware controls : take pictures and videos (D),780.0,1377.0,730.4309283819629,0.03281783409396787
-Your accounts : discover known accounts (S),814.0,1366.0,724.5959681697612,0.058107543292596445
 Services that cost you money : directly call phone numbers (D),728.0,1263.0,669.9595225464191,0.04151799570552566
 System tools : retrieve running applications (D),654.0,1214.0,643.967427055703,0.007729448933132966
 System tools : modify global system settings (D),617.0,1096.0,581.3742175066313,0.029728428710267644
 System tools : set wallpaper (S),479.0,1082.0,573.9479045092838,-0.0901734113365593
-Network communication : receive data from Internet (S),618.0,825.0,437.6220159151194,0.17087364735237245
 Your personal information : write contact data (D),1533.0,780.0,413.75172413793103,0.5749311851040991
 Hardware controls : record audio (D),1594.0,763.0,404.73405835543764,0.595009594534599
-Services that cost you money : send SMS messages (D),385.0,615.0,326.22732095490716,0.08263557559372656
-Hardware controls : change your audio settings (D),373.0,579.0,307.1310875331565,0.09684737791614674
-Your personal information : read sensitive log data (D),389.0,569.0,301.8265782493369,0.12618712784845984
-System tools : change Wi-Fi state (D),481.0,548.0,290.68710875331567,0.24661924384630537
 Your personal information : read Browser's history and bookmarks (D),262.0,547.0,290.1566578249337,-0.050993965980323304
 Your messages : receive SMS (D),1754.0,542.0,287.5044031830239,0.7183406484602632
-System tools : kill background processes (S),400.0,505.0,267.8777188328912,0.1978240588681278
 Your personal information : write Browser's history and bookmarks (D),738.0,467.0,247.72058355437665,0.4973817374064985
-Network communication : create Bluetooth connections (D),348.0,452.0,239.7638196286472,0.18414910335878973
 System tools : mount and unmount filesystems (D),141.0,447.0,237.1115649867374,-0.25418837688846835
 Your messages : read SMS or MMS (D),1910.0,436.0,231.2766047745358,0.7839825044005578
-System tools : disable keylock (D),294.0,423.0,224.3807427055703,0.1343013957869419
-Hardware controls : control flashlight (S),310.0,359.0,190.43188328912467,0.23892985379949264
-System tools : bluetooth administration (D),271.0,330.0,175.04880636604776,0.2151136652862386
-Your accounts : use the authentication credentials of an account (D),253.0,321.0,170.27474801061007,0.19544102826402554
 Your accounts : manage the accounts list (D),393.0,295.0,156.48302387267904,0.43043545633199476
-System tools : change network connectivity (D),287.0,284.0,150.64806366047745,0.3115561284541702
 Your personal information : read calendar events (D),870.0,276.0,146.40445623342174,0.7119169335877068
-Your location : access extra location provider commands (S),211.0,275.0,145.8740053050398,0.1824901610283816
-Your messages : edit SMS or MMS (D),217.0,269.0,142.69129973474801,0.20659020754755664
-Your location : mock location sources for testing (D),209.0,268.0,142.16084880636606,0.19033770826339977
-System tools : read sync settings (S),225.0,258.0,136.85633952254642,0.24358744299949334
-System tools : write sync settings (D),207.0,253.0,134.2040848806366,0.21335006919635674
 System tools : display system-level alerts (D),78.0,242.0,128.369124668435,-0.24407296754958407
 Your personal information : add or modify calendar events and send email to guests (D),1037.0,236.0,125.18641909814323,0.7845674032307348
-Phone calls : modify phone state (S),137.0,199.0,105.55973474801061,0.12961864954483032
 Default : Access DRM content. (S),0.0,199.0,105.55973474801061,-1.0
-Your accounts : act as an account authenticator (D),120.0,173.0,91.76801061007957,0.13331564719613354
-Phone calls : intercept outgoing calls (D),126.0,164.0,86.99395225464191,0.18313218442336315
 Default : modify battery statistics (S),305.0,144.0,76.38493368700266,0.5994339212692092
-System tools : send sticky broadcast (S),117.0,141.0,74.79358090185677,0.22006168767316978
 Default : Audio File Access (S),1390.0,127.0,67.36726790450929,0.907549360565269
-Default : modify secure system settings (S),103.0,126.0,66.83681697612732,0.21292899659651454
 Default : full Internet access (S),0.0,120.0,63.65411140583554,-1.0
 Default : Access Email provider data (S),34.0,111.0,58.880053050397876,-0.2678729418565001
-Your messages : receive MMS (D),67.0,101.0,53.57554376657825,0.11133647681830161
 Your accounts : view configured accounts (S),235.0,89.0,47.210132625994696,0.6654256728013308
 System tools : set wallpaper size hints (S),43.0,87.0,46.14923076923077,-0.0353253835401315
-System tools : read sync statistics (S),65.0,86.0,45.61877984084881,0.1752073218221684
-Default : power device on or off (S),74.0,81.0,42.96652519893899,0.26531928471225985
-System tools : expand/collapse status bar (S),59.0,80.0,42.43607427055703,0.16329423085974887
-System tools : write Access Point Name settings (D),61.0,79.0,41.90562334217507,0.185552315195969
-System tools : measure application storage space (S),69.0,79.0,41.90562334217507,0.24430119809372652
-Default : directly call any phone numbers (S),48.0,77.0,40.84472148541114,0.0805369007292549
-System tools : change your UI settings (D),51.0,70.0,37.1315649867374,0.15736058942502165
-System tools : allow Wi-Fi Multicast reception (D),60.0,68.0,36.070663129973475,0.24908058392032392
-System tools : make application always run (D),64.0,67.0,35.540212201591515,0.28591246862896935
-System tools : delete all application cache data (D),66.0,66.0,35.00976127320955,0.3068043952996638
-Default : directly install applications (S),41.0,66.0,35.00976127320955,0.07880880858524385
-System tools : set preferred applications (S),54.0,63.0,33.41840848806366,0.2354377283675509
 Default : change screen orientation (S),20.0,57.0,30.235702917771885,-0.2037535522201442
-Your messages : read Gmail (D),41.0,56.0,29.70525198938992,0.15974411649512227
 Your personal information : choose widgets (S),19.0,48.0,25.461644562334218,-0.14533075926319233
 Default : control location update notifications (S),1506.0,45.0,23.870291777188328,0.9687943587041496
-Your accounts : read Google service configuration (S),43.0,43.0,22.809389920424405,0.30680439529966375
-Default : disable or modify status bar (S),33.0,42.0,22.27893899204244,0.19394476817836329
-Your personal information : write to user defined dictionary (S),37.0,40.0,21.218037135278514,0.2710837335180106
 Hardware controls : test hardware (S),19.0,39.0,20.68758620689655,-0.04252176481832239
 Your accounts : act as the AccountManagerService (S),235.0,36.0,19.096233421750664,0.8496929044197629
 Your personal information : read user defined dictionary (D),189.0,33.0,17.504880636604774,0.8304652114502916
@@ -82,37 +38,25 @@ Network communication : control Near Field Communication (D),31.0,29.0,15.383076
 Your messages : Read Email attachments (D),33.0,26.0,13.791724137931034,0.4105058365758755
 System tools : reorder running applications (D),243.0,26.0,13.791724137931034,0.8925843565696606
 Your messages : receive WAP (D),118.0,25.0,13.261273209549072,0.7979408109446201
-System tools : write subscribed feeds (D),26.0,25.0,13.261273209549072,0.3244603587474242
-Default : delete applications (S),21.0,25.0,13.261273209549072,0.22587388224364183
-Default : delete other applications' data (S),19.0,22.0,11.669920424403182,0.23899897600531375
 Default : bind to a wallpaper (S),2.0,22.0,11.669920424403182,-0.7073867384875697
-System tools : read subscribed feeds (S),21.0,21.0,11.13946949602122,0.30680439529966375
 Default : delete other applications' caches (S),3.0,21.0,11.13946949602122,-0.5756559323750886
 Default : enable or disable application components (S),114.0,20.0,10.609018567639257,0.8297231020741801
 Default : force device reboot (S),402.0,17.0,9.017665782493369,0.9561203007402341
-Your accounts : Google mail (D),16.0,16.0,8.487214854111405,0.30680439529966375
 Your messages : send SMS-received broadcast (S),389.0,15.0,7.956763925729443,0.9599111810211243
 Default : Install DRM content. (S),6.0,14.0,7.42631299734748,-0.10623266399563787
-Default : access checkin properties (S),8.0,13.0,6.895862068965517,0.07412380202787168
 System tools : format external storage (D),1303.0,12.0,6.3654111405835545,0.9902771050977456
-Default : access SurfaceFlinger (S),10.0,12.0,6.3654111405835545,0.22208967609761157
 Your personal information : set alarm in alarm clock (S),185.0,11.0,5.834960212201591,0.9388480998899433
 Your messages : modify Gmail (D),16.0,11.0,5.834960212201591,0.46553965242025425
 Your personal information : retrieve system internal state (S),5.0,10.0,5.304509283819629,-0.02955107084019769
-Your messages : read instant messages (D),7.0,10.0,5.304509283819629,0.13779425713546609
 Default : Send download notifications. (S),10.0,9.0,4.774058355437666,0.3537241778010779
 Default : read frame buffer (S),2.0,9.0,4.774058355437666,-0.4095120251231489
 Default : press keys and control buttons (S),3.0,9.0,4.774058355437666,-0.2282023461010912
 System tools : set time zone (D),4.0,8.0,4.243607427055703,-0.029551070840197667
 Default : Access download manager. (S),1.0,8.0,4.243607427055703,-0.6185831933793327
 Your messages : Send Gmail (S),14.0,7.0,3.71315649867374,0.5807459275875805
-Your accounts : YouTube usernames (D),6.0,7.0,3.71315649867374,0.2354377283675509
-Your accounts : Google Spreadsheets (D),7.0,7.0,3.71315649867374,0.30680439529966375
 Your accounts : Google Maps (D),8.0,7.0,3.71315649867374,0.3659853346799944
-Your accounts : Google Docs (D),7.0,7.0,3.71315649867374,0.30680439529966375
 System tools : force stop other applications (S),12.0,7.0,3.71315649867374,0.5273824837183864
 Default : permission to install a location provider (S),1434.0,7.0,3.71315649867374,0.9948346351539044
-Your accounts : YouTube (D),6.0,6.0,3.1827055702917773,0.30680439529966375
 Your accounts : access other Google services (D),36.0,6.0,3.1827055702917773,0.8375453902956156
 System tools : send package removed broadcast (S),2.0,6.0,3.1827055702917773,-0.2282023461010912
 Default : interact with a device admin (S),229.0,6.0,3.1827055702917773,0.972584473400167
@@ -133,8 +77,6 @@ Default : monitor and control all application launching (S),2.0,4.0,2.1218037135
 Your accounts : Google Voice (D),1.0,3.0,1.5913527851458886,-0.2282023461010912
 Network communication : Broadcast data messages to applications. (S),1.0,3.0,1.5913527851458886,-0.2282023461010912
 Development tools : send Linux signals to applications (D),0.0,3.0,1.5913527851458886,-1.0
-Development tools : make all background applications close (D),2.0,3.0,1.5913527851458886,0.11378643071332555
-Development tools : enable application debugging (D),3.0,3.0,1.5913527851458886,0.30680439529966375
 Default : Voice Search Shortcuts (S),0.0,3.0,1.5913527851458886,-1.0
 Default : record what you type and actions you take (S),1.0,3.0,1.5913527851458886,-0.2282023461010912
 Default : Move application resources (S),142.0,3.0,1.5913527851458886,0.977834977465154
@@ -154,7 +96,6 @@ Default : update component usage statistics (S),0.0,1.0,0.5304509283819628,-1.0
 Default : read phone state and identity (S),2319.0,1.0,0.5304509283819628,0.9995426221473664
 Default : read instant messages (S),0.0,1.0,0.5304509283819628,-1.0
 Default : partial shutdown (S),2.0,1.0,0.5304509283819628,0.5807459275875804
-Default : Modify Google service configuration (S),1.0,1.0,0.5304509283819628,0.30680439529966375
 Default : manage application tokens (S),0.0,1.0,0.5304509283819628,-1.0
 Default : Advanced download manager functions. (S),0.0,1.0,0.5304509283819628,-1.0
 Default : access to passwords for Google accounts (S),1212.0,1.0,0.5304509283819628,0.9991250513700901
