@@ -33,16 +33,16 @@ for i in range(n_perm):
 
 apriori_list = []
 
-# for i in range(X.shape[0]):
-# 	apriori_list.append([j for j in permName if X[j].iloc[i] == 1])
-# 	print(i)
+for i in range(X.shape[0]):
+	apriori_list.append([j for j in permName if X[j].iloc[i] == 1])
+	print(i)
 
-# support = 0.1
-# confidence = 0.965 
-# length = 2
+support = 0.1
+confidence = 0.965 
+length = 2
 
-# association_rules = apriori(apriori_list, min_support=support, min_confidence=confidence,min_length=length)  
-# association_results = list(association_rules) 
+association_rules = apriori(apriori_list, min_support=support, min_confidence=confidence,min_length=length)  
+association_results = list(association_rules) 
 
-# for i in range(len(association_results)):
-# 	print(association_results[i])
+for i in range(len(association_results)):
+	print(association_results[i])
