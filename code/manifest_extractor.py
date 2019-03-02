@@ -26,7 +26,7 @@ for apk in fh:
 
     download_link = "curl  -O --remote-header-name -G -d apikey=" + api_key + " -d sha256=" + sha256 + url
     manifest_extraction = "apktool d " + sha256 +".apk"
-    output_file_name = sha256+"_"+re.sub('\"','',pkg_name)+"_"+vt_detection+".xml"
+    output_file_name = sha256+"_pkgname"+re.sub('\"','',pkg_name)+"_vtscore"+vt_detection+".xml"
 
 
     print("Downloading the apk file\n") 

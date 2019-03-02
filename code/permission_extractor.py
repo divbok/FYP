@@ -33,7 +33,8 @@ for file in fileList:
 		if permission in perm_dict:
 			permission_vector[perm_dict[permission]] = 1
 
-	sha256,package_name,vt_score = file.split("_")
+	sha256,remaining = file.split("_pkgname")
+	package_name,vt_score = remaining.split("_vtscore")
 	print(package_name+","+sha256+",".join([str(val) for val in permission_vector])+","+re.sub("\.xml","",vt_score))
 
 	
