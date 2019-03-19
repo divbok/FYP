@@ -9,6 +9,8 @@ ManifestFolder = "dataset/Manifestfiles/"
 permissionListFile = "dataset/android_permissions.txt"
 missingPermissionFile = "dataset/missed_perm.csv"
 
+cutoff = 2
+
 perm_file = open(permissionListFile,"r")
 miss_perm_file = open(missingPermissionFile,"a")
 perm_dict = { }
@@ -34,15 +36,20 @@ for file in fileList:
 	sha256 = file.split("_")[0]
 	vt_score = re.sub("\.xml","",file.split("_")[-1])
 	package_name = "_".join(file.split("_")[1:-1])
-	
 
-	for permission in permission_list:
-		if permission in perm_dict:
-			permission_vector[perm_dict[permission]] = 1
+
+
+	if vt_score != "":
+		if int(vt_score) >= cutoff:
+			vt_score = "1"
 		else:
-			miss_perm_file.write(sha256+","+permission+"\n")
-
-	print(package_name+","+sha256+",".join([str(val) for val in permission_vector])+","+vt_score)
+			vt_score = "0"
+		for permission in permission_list:
+			if permission in perm_dict:
+				permission_vector[perm_dict[permission]] = 1
+			else:
+				miss_perm_file.write(sha256+","+permission+"\n")
+		print(package_name+","+sha256+",".join([str(val) for val in permission_vector])+","+vt_score)
 
 	
 	
