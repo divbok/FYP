@@ -1,10 +1,13 @@
 import os
 import re
+from os import listdir
+from os.path import isfile, join
 
 skip_file ="dataset/skipped.txt"
 list_file = "dataset/lists.csv"
 api_key = "f8c0594ac124026fbb71973a5ee54b6e5d65ca098c92ec030cd5f760ed350aa0"
 url = " https://androzoo.uni.lu/api/download"
+ManifestFolder = "dataset/Manifestfiles/"
 
 size_limit = 10000000
 manifest_downloaded = 0
@@ -13,20 +16,36 @@ manifest_downloaded = 0
 
 skipped_list = open(skip_file,"a")
 fh = open(list_file,"r")
-# fh.readline() #Skip the header
+fh.readline() #Skip the header
+
+downloadedAPKs = [f.split("_")[0] for f in listdir(ManifestFolder) if isfile(join(ManifestFolder, f))]
+manifest_downloaded = manifest_downloaded + len(downloadedAPKs)
+
 
 for apk in fh:
     
     sha256,sha1,md5,dex_date,apk_size,pkg_name,vercode,vt_detection,vt_scan_date,dex_size,markets = apk.split(",")
     
-    if( int(apk_size) > size_limit ) :
-        #skipped_list.write(apk)
+    if int(apk_size) > size_limit :
+        skipped_list.write(apk)
         print("Size Limit Exceeded..Skipping apk\n")
+        continue
+    
+    if sha256 in downloadedAPKs:
+        print("Manifest already downloaded..Skipping apk\n")
+        continue
+   
+    if vt_detection == "":
+        print("No score exists..Skipping apk\n")
+        continue
+    
+    if int(vt_detection) == 0 :
+        print("Not a malware..Skpping apk\n")
         continue
 
     download_link = "curl  -O --remote-header-name -G -d apikey=" + api_key + " -d sha256=" + sha256 + url
-    manifest_extraction = "apktool d " + sha256 +".apk"
-    output_file_name = sha256+"_pkgname"+re.sub('\"','',pkg_name)+"_vtscore"+vt_detection+".xml"
+    manifest_extraction = "apktool -s d " + sha256 +".apk"
+    output_file_name = sha256+"_"+re.sub('\"','',pkg_name)+"_"+vt_detection+".xml"
 
 
     print("Downloading the apk file\n") 
