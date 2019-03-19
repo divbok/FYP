@@ -6,7 +6,6 @@ from sklearn.metrics import confusion_matrix
 
 
 
-
 #Import dataset and add class labels
 malwaredata = pd.read_csv("dataset/malware.csv")
 malwaredata['Class'] = 1
@@ -14,7 +13,7 @@ benigndata = pd.read_csv("dataset/benign.csv")
 benigndata['Class'] = 0
 
 #Import ranks
-permRanks = pd.read_csv("results/perm_rank.csv",names =['permName','malware_sum','benign_sum','support','rank'])
+permRanks = pd.read_csv("results/perm_ranker_chi.csv",names =['permName','malware_sum','benign_sum','support','rank'])
 n_perm = permRanks.shape[0]
 
 #Prepare dataset for training

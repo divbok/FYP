@@ -6,7 +6,7 @@ import re
  # <uses-permission android:name="android.permission.INTERNET"/>
 
 ManifestFolder = "dataset/Manifestfiles/"
-permissionListFile = "dataset/android_perm_list.txt"
+permissionListFile = "dataset/android_permissions.txt"
 missingPermissionFile = "dataset/missed_perm.csv"
 
 perm_file = open(permissionListFile,"r")

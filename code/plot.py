@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 
 
-results = pd.read_csv("results/decisiontree_PRNR.txt",names =['noofperm','accuracy','precision','recall','falsposrate','fscore'],sep='\s+')
+results = pd.read_csv("results/decisiontree_PRNR_PCA.txt",names =['noofperm','accuracy','precision','recall','falsposrate','fscore'],sep='\s+')
 #n_perm = permRanks.shape[0]
 print(results)
 
@@ -21,8 +21,8 @@ plt.plot(results['noofperm'].tolist(),results['fscore'].tolist())
 
 plt.legend(['Accuracy','Precision','Recall','F-Score'],loc="upper left")
 
-plt.axis([0, 81, 0.6, 1])
-plt.title("DecisionTree PRNR")
+plt.axis([0, 120, 0.7, 1])
+plt.title("DecisionTree PRNR+PCA")
 plt.ylabel('Metrics')
-plt.xlabel('Top N and Bottom N Permissions(Based on Rank)')
+plt.xlabel('Number of Principal Components')
 plt.show()
