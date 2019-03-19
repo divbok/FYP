@@ -49,7 +49,7 @@ for file in fileList:
 				permission_vector[perm_dict[permission]] = 1
 			else:
 				miss_perm_file.write(sha256+","+permission+"\n")
-		print(package_name+","+sha256+",".join([str(val) for val in permission_vector])+","+vt_score)
+		print(package_name+","+sha256+","+",".join([str(val) for val in permission_vector])+","+vt_score)
 
 	
 	

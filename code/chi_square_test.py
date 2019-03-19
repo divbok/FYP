@@ -14,13 +14,12 @@ class ChiSquare:
         self.dfExpected = None
         
     def _print_chisquare_result(self, colX, alpha):
-        print(self.p)
         if self.p>=alpha:
-            result="{0} is IMPORTANT for Prediction".format(colX)
+            print(colX)
         else:
-            result="{0} is NOT an important predictor. (Discard {0} from model)".format(colX)
+            result=""
 
-        print(result)
+ 
         
     def TestIndependence(self,colX,colY, alpha=0.05):
         X = self.df[colX].astype(str)
@@ -48,16 +47,14 @@ dataset = pd.read_csv("dataset/new_dataset.csv")
 # result = pd.concat(mixeddata)
 X = dataset.drop(dataset.columns[[0,1]],axis = 1)
 Y = dataset['score']
-print(dataset)
+
 
 #Initialize ChiSquare Class
 cT = ChiSquare(X)
 
-# print(Y)
 
-# #Feature Selection
-# testColumns = list(X.columns.values)
-# print(testColumns)
-# # testColumns.pop(-1)
-# # for var in testColumns:
-# #     cT.TestIndependence(colX=var,colY="score") 
+#Feature Selection
+testColumns = list(X.columns.values)
+testColumns.pop(-1)
+for var in testColumns:
+    cT.TestIndependence(colX=var,colY="score") 
