@@ -14,7 +14,7 @@ class ChiSquare:
         self.dfExpected = None
         
     def _print_chisquare_result(self, colX, alpha):
-        result = ""
+        print(self.p)
         if self.p>=alpha:
             result="{0} is IMPORTANT for Prediction".format(colX)
         else:
@@ -37,23 +37,27 @@ class ChiSquare:
         self._print_chisquare_result(colX,alpha)
 
 #Import dataset and add class labels
-malwaredata = pd.read_csv("dataset/malware.csv")
-malwaredata['Class'] = 1
-benigndata = pd.read_csv("dataset/benign.csv")
-benigndata['Class'] = 0
+# malwaredata = pd.read_csv("dataset/malware.csv")
+# malwaredata['Class'] = 1
+# benigndata = pd.read_csv("dataset/benign.csv")
+# benigndata['Class'] = 0
 
+dataset = pd.read_csv("dataset/new_dataset.csv")
 #Prepare dataset for training
-mixeddata = [malwaredata,benigndata]
-result = pd.concat(mixeddata)
-X = result.drop(result.columns[[0,1]],axis = 1)
-Y = result['Class']
-
+# mixeddata = [malwaredata,benigndata]
+# result = pd.concat(mixeddata)
+X = dataset.drop(dataset.columns[[0,1]],axis = 1)
+Y = dataset['score']
+print(dataset)
 
 #Initialize ChiSquare Class
 cT = ChiSquare(X)
 
-#Feature Selection
-testColumns = list(X.columns.values)
-testColumns.pop(-1)
-for var in testColumns:
-    cT.TestIndependence(colX=var,colY="Class") 
+# print(Y)
+
+# #Feature Selection
+# testColumns = list(X.columns.values)
+# print(testColumns)
+# # testColumns.pop(-1)
+# # for var in testColumns:
+# #     cT.TestIndependence(colX=var,colY="score") 
