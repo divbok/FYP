@@ -1,27 +1,24 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier  
-from sklearn.metrics import confusion_matrix 
-
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import confusion_matrix
 
 
 
 #Import dataset and add class labels
-malwaredata = pd.read_csv("dataset/malware.csv")
-malwaredata['Class'] = 1
-benigndata = pd.read_csv("dataset/benign.csv")
-benigndata['Class'] = 0
 
+dataset = pd.read_csv("dataset/drebin-215-dataset-5560malware-9476-benign.csv")
 #Import ranks
-permRanks = pd.read_csv("results/perm_rank.csv",names =['permName','malware_sum','benign_sum','support','rank'])
+permRanks = pd.read_csv("results/perm_rank_results",names =['permName','malware_sum','benign_sum','support','rank'])
 n_perm = permRanks.shape[0]
 
 #Prepare dataset for training
-mixeddata = [malwaredata,benigndata]
-result = pd.concat(mixeddata)
-X = result.drop(result.columns[[0,1,-1]],axis = 1)
-Y = result['Class']
+
+dataset.loc[dataset['class'] == 'S', 'class'] = 1
+dataset.loc[dataset['class'] == 'B', 'class'] = 0
+X = dataset.drop(dataset.columns[[-1]],axis = 1)
+Y = dataset['class']
 
 
 #Split data into training and testing
@@ -33,7 +30,7 @@ classifier = DecisionTreeClassifier()
 for subset_size in range(3,int(n_perm/2)+1):
 	perm_subset = [x for x in permRanks['permName'][0:subset_size]]
 	perm_subset = perm_subset + [x for x in permRanks['permName'][-subset_size:]]
-	
+
 	classifier.fit(X_train[perm_subset], Y_train)
 
 	#Predict the class on testing data
@@ -50,9 +47,8 @@ for subset_size in range(3,int(n_perm/2)+1):
 	precision = TP/(TP+FP)
 	recall = TP/(TP+FN)
 	accuracy = (TP+TN)/(TP+FP+TN+FN)
-	falseposrate = FP/(FP+TN) 
+	falseposrate = FP/(FP+TN)
 	fscore = (2*precision*recall)/(precision+recall)
-    
+
 
 	print(subset_size,accuracy,precision,recall,falseposrate,fscore)
-
