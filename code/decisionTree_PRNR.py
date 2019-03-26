@@ -10,15 +10,48 @@ from sklearn.metrics import confusion_matrix
 
 dataset = pd.read_csv("dataset/drebin-215-dataset-5560malware-9476-benign.csv")
 #Import ranks
-permRanks = pd.read_csv("results_new/permissionrank.txt",names =['permName','malware_sum','benign_sum','support','rank'])
-n_perm = permRanks.shape[0]
+permRanks = pd.read_csv("results_new/perm_rank.txt",names =['permName','malware_sum','benign_sum','support','rank','support_SPR'])
 
+
+apriori =[]
 #Prepare dataset for training
+# #INTERNET
+# apriori.append(["ACCESS_NETWORK_STATE","ACCESS_COARSE_LOCATION","ACCESS_FINE_LOCATION"])
+# #WRITE_SMS
+# apriori.append(['READ_SMS'])
+# #SEND_SMS
+# apriori.append(['RECEIVE_SMS'])
+# #ACCESS_WIFI_STATE
+# apriori.append(['CHANGE_WIFI_STATE','CHANGE_WIFI_MULTICAST_STATE'])
+# #READ_EXTERNAL_STORAGE
+# apriori.append(['WRITE_EXTERNAL_STORAGE'])
+# #RECORD_AUDIO
+# apriori.append(['MODIFY_AUDIO_SETTINGS'])
+# #READ_CALL_LOG
+# apriori.append(['WRITE_CALL_LOG','CALL_PHONE','CALL_PRIVILEGED','PROCESS_OUTGOING_CALLS'])
+# #READ_USER_DICTIONARY
+# apriori.append(['WRITE_USER_DICTIONARY'])
+# #READ_SYNC_SETTINGS
+# apriori.append(['WRITE_SYNC_SETTINGS','READ_SYNC_STATS'])
+
+
+
 
 dataset.loc[dataset['class'] == 'S', 'class'] = 1
 dataset.loc[dataset['class'] == 'B', 'class'] = 0
-X = dataset.drop(dataset.columns[[0,1,-1]],axis = 1)
+
+# for perm_list in apriori:
+# 	print (perm_list)
+# 	for perm in perm_list:
+# 		permRanks = permRanks[permRanks['permName'] != perm]
+
+n_perm = permRanks.shape[0]
+
+# print(n_perm)
+
+X = dataset.drop(dataset.columns[[-1]],axis = 1)
 Y = dataset['class']
+
 
 
 #Split data into training and testing

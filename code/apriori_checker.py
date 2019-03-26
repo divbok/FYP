@@ -9,15 +9,33 @@ from sklearn.metrics import confusion_matrix
 
 dataset = pd.read_csv("dataset/drebin-215-dataset-5560malware-9476-benign.csv")
 #Import ranks
-permRanks = pd.read_csv("results_new/perm_support.txt",names =['permName','malware_sum','benign_sum','support','rank','support_SPR'])
+permRanks = pd.read_csv("results_new/apriori_27.txt",names =['permName','malware_sum','benign_sum','support','rank','support_SPR'])
 n_perm = permRanks.shape[0]
 
 #Prepare dataset for training
+apriori =[]
+#ACCESS_NETWORK_STATE
+apriori.append(["INTERNET"])
+#"ACCESS_COARSE_LOCATION",
+apriori.append(["ACCESS_FINE_LOCATION"])
+#SEND_SMS
+apriori.append(['RECEIVE_SMS'])
+#WAKE_LOCK
+apriori.append(['VIBRATE'])
+
+#27 0.9414893617021277 0.9658484525080042 0.9417273673257024 0.9536354056902001
 
 dataset.loc[dataset['class'] == 'S', 'class'] = 1
 dataset.loc[dataset['class'] == 'B', 'class'] = 0
 X = dataset.drop(dataset.columns[[-1]],axis = 1)
 Y = dataset['class']
+
+for perm_list in apriori:
+	print (perm_list)
+	for perm in perm_list:
+		permRanks = permRanks[permRanks['permName'] != perm]
+
+n_perm = permRanks.shape[0]
 
 
 #Split data into training and testing
@@ -28,7 +46,7 @@ classifier = DecisionTreeClassifier()
 
 
 
-for select_perm in range(1,n_perm+1):
+for select_perm in range(n_perm,n_perm+1):
 	perm_subset =  [x for x in permRanks['permName'][0:select_perm]]
 
 	classifier.fit(X_train[perm_subset], Y_train)
