@@ -6,10 +6,11 @@ import re
  # <uses-permission android:name="android.permission.INTERNET"/>
 
 ManifestFolder = "dataset/Manifestfiles/"
-permissionListFile = "dataset/android_permissions.txt"
+permissionListFile = "dataset/permission_new.txt"
 missingPermissionFile = "dataset/missed_perm.csv"
 
-cutoff = 2
+cutoff = 3
+min_permission_count = 2
 
 perm_file = open(permissionListFile,"r")
 miss_perm_file = open(missingPermissionFile,"a")
@@ -37,7 +38,7 @@ for file in fileList:
 	vt_score = re.sub("\.xml","",file.split("_")[-1])
 	package_name = "_".join(file.split("_")[1:-1])
 
-
+	permission_count = 0 
 
 	if vt_score != "":
 		if int(vt_score) >= cutoff:
@@ -47,9 +48,11 @@ for file in fileList:
 		for permission in permission_list:
 			if permission in perm_dict:
 				permission_vector[perm_dict[permission]] = 1
+				permission_count += 1 
 			else:
 				miss_perm_file.write(sha256+","+permission+"\n")
-		print(package_name+","+sha256+","+",".join([str(val) for val in permission_vector])+","+vt_score)
+		if permission_count >= min_permission_count:
+			print(package_name+","+sha256+","+",".join([str(val) for val in permission_vector])+","+vt_score)
 
 	
 	

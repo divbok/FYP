@@ -3,20 +3,15 @@ import pandas as pd
 from apyori import apriori
 
 #Import dataset and add class labels
-malwaredata = pd.read_csv("dataset/malware.csv")
-malwaredata['Class'] = 1
-benigndata = pd.read_csv("dataset/benign.csv")
-benigndata['Class'] = 0
+dataset = pd.read_csv("dataset/drebin-215-dataset-5560malware-9476-benign.csv")
 
 #Import ranks
-permRanks = pd.read_csv("results/perm_rank.csv",names =['permName','malware_sum','benign_sum','support','rank'])
+permRanks = pd.read_csv("results_new/permissionrank.txt",names =['permName','malware_sum','benign_sum','support','rank'])
 n_perm = permRanks.shape[0]
 
 #Prepare dataset for training
-mixeddata = [malwaredata,benigndata]
-result = pd.concat(mixeddata)
-X = result.drop(result.columns[[0,1,-1]],axis = 1)
-Y = result['Class']
+X = dataset.drop(dataset.columns[[-1]],axis = 1)
+Y = dataset['class']
 
 pruned_dataset_size = 52 
 minimum_support = 100

@@ -14,13 +14,11 @@ class ChiSquare:
         self.dfExpected = None
         
     def _print_chisquare_result(self, colX, alpha):
-        if self.p>=alpha:
+        result = ""
+        if self.p<alpha:
             print(colX)
-        else:
-            result=""
 
- 
-        
+
     def TestIndependence(self,colX,colY, alpha=0.05):
         X = self.df[colX].astype(str)
         Y = self.df[colY].astype(str)
@@ -32,29 +30,19 @@ class ChiSquare:
         self.dof = dof 
         
         self.dfExpected = pd.DataFrame(expected, columns=self.dfObserved.columns, index = self.dfObserved.index)
-        
         self._print_chisquare_result(colX,alpha)
 
-#Import dataset and add class labels
-# malwaredata = pd.read_csv("dataset/malware.csv")
-# malwaredata['Class'] = 1
-# benigndata = pd.read_csv("dataset/benign.csv")
-# benigndata['Class'] = 0
-
-dataset = pd.read_csv("dataset/new_dataset.csv")
-#Prepare dataset for training
-# mixeddata = [malwaredata,benigndata]
-# result = pd.concat(mixeddata)
-X = dataset.drop(dataset.columns[[0,1]],axis = 1)
-Y = dataset['score']
 
 
-#Initialize ChiSquare Class
-cT = ChiSquare(X)
+dataset = pd.read_csv("dataset/drebin-215-dataset-5560malware-9476-benign.csv")
+dataset.loc[dataset['class'] == 'S', 'class'] = 1
+dataset.loc[dataset['class'] == 'B', 'class'] = 0
+
+cT = ChiSquare(dataset)
+chi_square_file = "dataset/updatedpermission.txt"
+permission = [line.strip() for line in open(chi_square_file)]
+print(permission)
 
 
-#Feature Selection
-testColumns = list(X.columns.values)
-testColumns.pop(-1)
-for var in testColumns:
-    cT.TestIndependence(colX=var,colY="score") 
+for var in permission:
+    cT.TestIndependence(colX=var,colY="class") 
